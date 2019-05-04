@@ -28,6 +28,10 @@ class SecondscreenTableViewController: UITableViewController {
             do{
                 var Folders = try JSONDecoder().decode([FolderInfo].self, from:data!)
                 
+                for folder in Folders{
+                    print(folder.folders)
+                }
+                
                 
             }catch{
                 let alert = UIAlertController(title: "Oops", message: "There was an error while parsing the data", preferredStyle: UIAlertController.Style.alert)
@@ -36,7 +40,7 @@ class SecondscreenTableViewController: UITableViewController {
                 
             }
             
-        }
+        }.resume()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
