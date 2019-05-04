@@ -7,12 +7,36 @@
 //
 
 import UIKit
+struct FolderInfo: Decodable{
+    let folders: [String]
+    let files : [String]
+    let current: String
+    let parent : String
+    
+    
+}
+
 
 class SecondscreenTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = 
+        let url = "http://127.0.0.1:8000"
+        let urlObj = URL(string: url)
+        
+        URLSession.shared.dataTask(with: urlObj!) {(data,response,error) in
+            do{
+                var Folders = try JSONDecoder().decode([FolderInfo].self, from:data!)
+                
+                
+            }catch{
+                let alert = UIAlertController(title: "Oops", message: "There was an error while parsing the data", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+            
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
