@@ -12,6 +12,10 @@
 		2B6575F1226CB58200D36135 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B6575EF226CB58200D36135 /* Main.storyboard */; };
 		2B6575F3226CB58600D36135 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B6575F2226CB58600D36135 /* Assets.xcassets */; };
 		2B6575F6226CB58600D36135 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B6575F4226CB58600D36135 /* LaunchScreen.storyboard */; };
+		EF2F976D227AC2AB006030F1 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EF2F976C227AC2AB006030F1 /* bg.jpg */; };
+		EF2F976F227AC3C0006030F1 /* opengrey.png in Resources */ = {isa = PBXBuildFile; fileRef = EF2F976E227AC3C0006030F1 /* opengrey.png */; };
+		EF2F9771227AD391006030F1 /* SecondscreenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2F9770227AD391006030F1 /* SecondscreenTableViewController.swift */; };
+		EF2F9773227AE075006030F1 /* parse json data.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2F9772227AE075006030F1 /* parse json data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		2B6575F2226CB58600D36135 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2B6575F5226CB58600D36135 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B6575F7226CB58600D36135 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EF2F976C227AC2AB006030F1 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = bg.jpg; path = ../../../../Downloads/bg.jpg; sourceTree = "<group>"; };
+		EF2F976E227AC3C0006030F1 /* opengrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = opengrey.png; path = ../../../../Downloads/opengrey.png; sourceTree = "<group>"; };
+		EF2F9770227AD391006030F1 /* SecondscreenTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondscreenTableViewController.swift; sourceTree = "<group>"; };
+		EF2F9772227AE075006030F1 /* parse json data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "parse json data.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,10 @@
 				2B6575EB226CB58200D36135 /* AppDelegate.swift */,
 				2B6575ED226CB58200D36135 /* ViewController.swift */,
 				2B6575EF226CB58200D36135 /* Main.storyboard */,
+				EF2F9770227AD391006030F1 /* SecondscreenTableViewController.swift */,
+				EF2F9772227AE075006030F1 /* parse json data.swift */,
+				EF2F976E227AC3C0006030F1 /* opengrey.png */,
+				EF2F976C227AC2AB006030F1 /* bg.jpg */,
 				2B6575F2226CB58600D36135 /* Assets.xcassets */,
 				2B6575F4226CB58600D36135 /* LaunchScreen.storyboard */,
 				2B6575F7226CB58600D36135 /* Info.plist */,
@@ -122,8 +134,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF2F976F227AC3C0006030F1 /* opengrey.png in Resources */,
 				2B6575F6226CB58600D36135 /* LaunchScreen.storyboard in Resources */,
 				2B6575F3226CB58600D36135 /* Assets.xcassets in Resources */,
+				EF2F976D227AC2AB006030F1 /* bg.jpg in Resources */,
 				2B6575F1226CB58200D36135 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -135,8 +149,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF2F9771227AD391006030F1 /* SecondscreenTableViewController.swift in Sources */,
 				2B6575EE226CB58200D36135 /* ViewController.swift in Sources */,
 				2B6575EC226CB58200D36135 /* AppDelegate.swift in Sources */,
+				EF2F9773227AE075006030F1 /* parse json data.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
