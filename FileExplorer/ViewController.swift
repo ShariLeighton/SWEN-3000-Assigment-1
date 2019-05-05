@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         let url = "http://127.0.0.1:8000/?folder=/"
         let urlObj = URL(string: url)
         
-        print("Table")
+        
         
         //        delay.enter()
         
