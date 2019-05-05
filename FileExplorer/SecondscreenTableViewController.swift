@@ -21,8 +21,14 @@ var folders = [""]
 var current = ""
 var parent = ""
 
+//var newfiles = [""]
+//var newfolders = [""]
+//var newcurrent = ""
+
 let delay = DispatchGroup()
 
+
+ var Displaythings = [""]
 
 class SecondscreenTableViewController: UITableViewController {
     //var folder = FolderInfo.self
@@ -97,9 +103,6 @@ class SecondscreenTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print(folders.count + files.count)
-        print(folders)
-        print(files)
             return folders.count + files.count
     }
 
@@ -111,7 +114,7 @@ class SecondscreenTableViewController: UITableViewController {
         
         cell.backgroundColor = UIColor.red
         
-        var Displaythings = [""]
+       
         
         Displaythings = folders + files
         
@@ -145,8 +148,37 @@ class SecondscreenTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedrow = indexPath.row
+        let currentSelection = Displaythings[selectedrow]
+        
+
+        let newURL = "http://127.0.0.1:8000/?folder=/"  + currentSelection + "/"
+        let newURLObj = URL(string: newURL)
         
         
+        URLSession.shared.dataTask(with: newURLObj!) {(data,response,error) in
+            do{
+                let newFolders = try JSONDecoder().decode(FolderInfo.self, from:data!)
+                files = newFolders.files
+
+                folders = newFolders.folders
+                current = newFolders.current
+                
+                
+                
+//                tableView.reloadData()
+                
+            }catch
+            {
+                let alert = UIAlertController(title: "Oops", message: "There was an error while parsing the data", preferredStyle: UIAlertController.Style.alert)
+                alert.addAction(UIAlertAction(title:"OK", style: UIAlertAction.Style.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                
+            }
+        }.resume()
+        
+        tableView.reloadData()
+//        SecondscreenTableViewController.reloadInputViews(self)
     }
     /*
     // Override to support conditional editing of the table view.
@@ -194,3 +226,4 @@ class SecondscreenTableViewController: UITableViewController {
     */
 
 }
+
