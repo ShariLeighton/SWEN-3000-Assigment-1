@@ -18,6 +18,8 @@ struct FolderInfo: Decodable{
 
 
 class SecondscreenTableViewController: UITableViewController {
+    //var folder = FolderInfo.self
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +30,10 @@ class SecondscreenTableViewController: UITableViewController {
             do{
                 var Folders = try JSONDecoder().decode([FolderInfo].self, from:data!)
                 
-                for folder in Folders{
-                    print(folder.folders)
-                }
+              //for folder in Folders{
+                   //print(folder.folders)
+//                }
+                //let folders = Folders["folders"]
                 
                 
             }catch{
@@ -54,23 +57,38 @@ class SecondscreenTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         //to display the number of rows as is items in folders
-        return 0
+        //guard let folder = self.folder else {
+        
+            return 0//folder.FolderInfo.count
+        
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        
         return 0
     }
 
-    /*
+    
+    private static let cellReuseIdentifier = "Identifier"
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        var cell = tableView.dequeueReusableCell(withIdentifier: SecondscreenTableViewController.cellReuseIdentifier, for: indexPath)
+        
+        if cell == nil{
+            cell = UITableViewCell.init(style: .default, reuseIdentifier: SecondscreenTableViewController.cellReuseIdentifier)
 
+       }
+        
+        //cell.textLabel?.text = indexPath.description
+        //let folderitems = FolderInfo[indexPath.row]
+        //cell.textLabel?.text =
+//        cell.textLabel?.text = FolderInfo.(folders: <#T##[String]#>, files: <#T##[String]#>, current: <#T##String#>, parent: <#T##String#>)
         // Configure the cell...
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.
